@@ -1,0 +1,117 @@
+<div class="grid flex justify-content-center flex-wrap mt-5">
+
+  <div class="col-3 align-items-center justify-content-center  border-round m-1">
+    <p-panel
+        header="¿Cuál o cuáles son las películas con mayor duración (tiempo)?"
+        [toggleable]="true"
+      >
+      <div *ngFor="let item of getMoviesWithMaxDuration()">
+        <p><strong>Titulo: </strong> {{ item.title }} </p>
+        <p> <strong>Duración: </strong>{{ item.duration }}</p>
+      </div>
+      </p-panel>
+  </div>
+  <div class="col-3 align-items-center justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuál o cuáles son las películas con menor duración (tiempo)?"
+        [toggleable]="true"
+      >
+        <div *ngFor="let item of getMoviesWithMinDuration()">
+          <p><strong>Titulo: </strong> {{ item.title }} </p>
+          <p> <strong>Duración: </strong>{{ item.duration }}</p>
+        </div>
+
+
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuál o cuáles son el programa de televisión con mayor cantidad de temporadas?"
+        [toggleable]="true"
+      >
+      <div *ngFor="let item of getShowsWithMaxTemp()">
+        <p><strong>Titulo: </strong> {{ item.title }} </p>
+        <p> <strong>Duración: </strong>{{ item.duration }}</p>
+      </div>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuál o cuáles son el programa de televisión con menor cantidad de temporadas?"
+        [toggleable]="true"
+      >
+      <div *ngFor="let item of getShowsWithMinSeasons().slice(0,5)">
+        <p><strong>Titulo: </strong> {{ item.title }} </p>
+        <p> <strong>Duración: </strong>{{ item.duration }}</p>
+        <p-divider></p-divider>
+      </div>
+      <p> y otros {{ getShowsWithMinSeasons().length - 5}} más. </p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas veces se repite la clasificación de tipo Thrillers?"
+        [toggleable]="true"
+      >
+      <p><strong>Cantidad: </strong> {{ countByTag('Thrillers') }} </p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas veces se repite la clasificación de tipo Reality TV?"
+        [toggleable]="true"
+      >
+      <p><strong>Cantidad: </strong> {{ countByTag('Reality') }} </p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas películas fueron dirigidas por Toshiya Shinohara?"
+        [toggleable]="true"
+      >
+      <p><strong>Cantidad: </strong> {{ countProductsByDir('Toshiya Shinohara') }} </p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas películas o programas de televisión fueron lanzadas en September 22, 2021?"
+        [toggleable]="true"
+      >
+      <p><strong>Cantidad: </strong> {{ countByDate('September 22, 2021') }} </p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas películas o programas de televisión pertenecen a la clasificación TV-MA?"
+        [toggleable]="true"
+      >
+      <p><strong>Cantidad: </strong> {{ countByRating('TV-MA') }} </p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas películas o programas de televisión pertenecen a la clasificación PG-13?"
+        [toggleable]="true"
+      >
+      <p><strong>Cantidad: </strong> {{ countByRating('PG-13') }} </p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-right justify-content-center border-round m-1">
+    <p-button icon="pi pi-home" severity="info" (click)="goToHome()"></p-button>
+  </div>
+
+  <div>
+
+
+
+</div>
+

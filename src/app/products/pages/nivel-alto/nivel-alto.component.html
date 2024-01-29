@@ -1,0 +1,106 @@
+<div class="grid flex justify-content-center flex-wrap mt-5">
+  <div class="col-3 align-items-center justify-content-center  border-round m-1">
+    <p-panel
+        header="¿Cuál es la fecha (mes, día y año) en la que más películas o series fueron agregadas?"
+        [toggleable]="true"
+      >
+        <p> <strong>Fecha:</strong> {{getDateMoreProducts()[0]}}</p>
+        <p> <strong>Cantidad de productos:</strong> {{getDateMoreProducts()[1]}}</p>
+      </p-panel>
+  </div>
+  <div class="col-3 align-items-center justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuál es el género que predominante en las películas o programas de televisión?"
+        [toggleable]="true"
+      >
+        <p>{{getListInWithMoreProducts()}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuál película o programa de televisión tiene la descripción más larga?"
+        [toggleable]="true"
+      >
+      <p> <strong>Titulo:</strong> {{ getBiggerDescription().title }}</p>
+      <p> <strong>Descripción:</strong> {{getBiggerDescription().description}}</p>
+      <p> <strong>Longitud:</strong> {{getBiggerDescription().description.length}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuál película o programa de televisión tiene la descripción más corta"
+        [toggleable]="true"
+      >
+      <p> <strong>Titulo:</strong> {{ getSmallerDescription().title }}</p>
+      <p> <strong>Descripción:</strong> {{getSmallerDescription().description}}</p>
+      <p> <strong>Longitud:</strong> {{getSmallerDescription().description.length}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas películas o programas de televisión no cuentan con el nombre de su director?"
+        [toggleable]="true"
+      >
+        <p>{{getProductsWithoutDirector()}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header=" ¿Cuántas películas o programas de televisión no cuentan con información de su elenco?"
+        [toggleable]="true"
+      >
+        <p>{{getProductsWithoutCast()}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas películas o programas de televisión fueron lanzadas del año de 2002 al 2021?"
+        [toggleable]="true"
+      >
+        <p>{{getProductsInRangeDate(2002,2021)}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas películas o programas de televisión inician su título con la letra N?"
+        [toggleable]="true"
+      >
+        <p>{{getProductsStartsWith('N')}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas películas cuentan con la clasificación Comedies y Dramas?"
+        [toggleable]="true"
+      >
+        <p>{{getProductsWithTwoListedIn('Comedies', 'Dramas')}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántos programas de televisión cuentan con la clasificación International TV Shows, Romantic TV Shows y TV Comedies?"
+        [toggleable]="true"
+      >
+        <p>{{getProductsWithThree('International TV Shows', 'Romantic TV Shows', 'TV Comedies')}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-right justify-content-center border-round m-1">
+    <p-button icon="pi pi-home" severity="info" (click)="goToHome()"></p-button>
+  </div>
+
+  <div>
+
+
+
+</div>
+
+

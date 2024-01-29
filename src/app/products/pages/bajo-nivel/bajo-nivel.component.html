@@ -1,0 +1,101 @@
+<div class="grid flex justify-content-center flex-wrap mt-5">
+
+  <div class="col-3 align-items-center justify-content-center  border-round m-1">
+    <p-panel
+        header="¿Cuál es la cantidad de identificadores existentes?"
+        [toggleable]="true"
+      >
+        <p>{{ getCantIds()}}</p>
+      </p-panel>
+  </div>
+  <div class="col-3 align-items-center justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuál es la cantidad de películas existentes?"
+        [toggleable]="true"
+      >
+        <p>{{ getCantMovies()}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuál es la cantidad de programas de televisión existentes?"
+        [toggleable]="true"
+      >
+        <p>{{ getCantTvShow()}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuál es la cantidad de directores existentes?"
+        [toggleable]="true"
+      >
+        <p>{{ getCantDirectors()}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas películas o series de televisión cuentan con los nombres de su elenco?"
+        [toggleable]="true"
+      >
+        <p>{{ getCantProductsWithCast()}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas películas o programas de televisión fueron realizadas en México?"
+        [toggleable]="true"
+      >
+        <p>{{ getCantProductsByCountry('Mexico')}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas películas o programas de televisión fueron realizadas en Japón?"
+        [toggleable]="true"
+      >
+        <p>{{ getCantProductsByCountry('Japan')}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuántas películas o programas de televisión fueron realizadas en Estados Unidos?"
+        [toggleable]="true"
+      >
+        <p>{{ getCantProductsByCountry('United States')}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuál es el año en que más se lanzaron películas o programas de televisión?"
+        [toggleable]="true"
+      >
+        <p>{{ getYearWithMoreProducts()}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-left justify-content-center border-round m-1">
+    <p-panel
+        header="¿Cuál es el rating que más se repite?"
+        [toggleable]="true"
+      >
+        <p>{{ getClassificationWithMoreProducts()}}</p>
+      </p-panel>
+  </div>
+
+  <div class="col-3 align-items-right justify-content-center border-round m-1">
+    <p-button icon="pi pi-home" severity="info" (click)="goToHome()"></p-button>
+  </div>
+
+  <div>
+
+
+
+</div>
+

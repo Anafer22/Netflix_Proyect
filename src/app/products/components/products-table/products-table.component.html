@@ -1,0 +1,49 @@
+<div class="flex align-items-center justify-content-center pt-5">
+  <p-card
+    class="justify-content-center"
+    header="Datos de películas y series de Netflix"
+  >
+    <p-table
+      [value]="data!"
+      [paginator]="true"
+      [rows]="5"
+      [showCurrentPageReport]="true"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [rowsPerPageOptions]="[5, 10, 20]"
+  >
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Show Id</th>
+              <th>Type</th>
+              <th>Title</th>
+              <th>Director</th>
+              <th>Cast</th>
+              <th>Country</th>
+              <th>Date added</th>
+              <th>Release year</th>
+              <th>Rating</th>
+              <th>Duration</th>
+              <th>Listed in</th>
+              <th>Description</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+          <tr>
+            <td>{{product.show_id}}</td>
+            <td>{{product.type}}</td>
+            <td>{{product.title}}</td>
+            <td>{{product.director}}</td>
+            <td>{{product.cast}}</td>
+            <td>{{product.country}}</td>
+            <td>{{product.date_added}}</td>
+            <td>{{product.release_year}}</td>
+            <td>{{product.rating}}</td>
+            <td>{{product.duration}}</td>
+            <td>{{product.listed_in}}</td>
+            <td>{{product.description}}</td>
+          </tr>
+      </ng-template>
+    </p-table>
+  </p-card>
+</div>
